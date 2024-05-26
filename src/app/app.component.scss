@@ -1,0 +1,11 @@
+main {
+  @apply mx-auto my-16 grid w-11/12 max-w-3xl grid-cols-3 gap-8 md:my-10 md:grid-flow-row;
+}
+
+#users {
+  @apply m-0 flex list-none flex-col gap-2 overflow-auto p-0 md:flex-row;
+}
+
+#fallback {
+  @apply m-0 text-left text-2xl font-bold md:text-center md:text-lg;
+}

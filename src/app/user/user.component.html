@@ -1,0 +1,6 @@
+<div class="user">
+  <button (click)="handleUserClick()">
+    <img [src]="avatarPath()" [alt]="avatarAltText()" />
+    <span>{{ selectedUser().name }}</span>
+  </button>
+</div>
