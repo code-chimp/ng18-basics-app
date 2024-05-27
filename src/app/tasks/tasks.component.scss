@@ -1,0 +1,30 @@
+#tasks {
+  @apply bg-electric-violet-950 max-h-[60vh] overflow-auto rounded-lg p-4 md:text-xl;
+
+  header {
+    @apply mb-8 flex items-start justify-between gap-4;
+  }
+
+  h2 {
+    @apply m-0 w-7/12 text-balance text-lg font-bold;
+  }
+
+  menu {
+    @apply m-0 p-0 md:w-auto;
+
+    button {
+      font: inherit;
+
+      @apply bg-electric-violet-600 cursor-pointer rounded-sm border-none px-6 py-2 text-base;
+
+      &:hover,
+      &:active {
+        @apply bg-electric-violet-800;
+      }
+    }
+  }
+
+  ul {
+    @apply mx-0 my-4 flex max-h-[50vh] list-none flex-col gap-4 overflow-auto p-0;
+  }
+}

@@ -1,6 +1,6 @@
-import { ITask } from '../@interfaces/ITask';
+import { ITask } from './@interfaces/ITask';
 
-const dummyTasks: ITask[] = [
+export const dummyTasks: ITask[] = [
   {
     id: 't1',
     userId: 'u1',

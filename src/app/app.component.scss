@@ -1,11 +1,17 @@
 main {
-  @apply mx-auto my-16 grid w-11/12 max-w-3xl grid-cols-3 gap-8 md:my-10 md:grid-flow-row;
+  @apply mx-auto my-10 grid w-[90%] max-w-[50rem] grid-flow-row gap-8 md:my-16;
 }
 
 #users {
-  @apply m-0 flex list-none flex-col gap-2 overflow-auto p-0 md:flex-row;
+  @apply m-0 flex list-none flex-col gap-2 overflow-auto p-0 md:flex-col;
 }
 
 #fallback {
-  @apply m-0 text-left text-2xl font-bold md:text-center md:text-lg;
+  @apply m-0 text-center text-base font-bold md:text-left md:text-2xl;
+}
+
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: 1fr 2fr;
+  }
 }
