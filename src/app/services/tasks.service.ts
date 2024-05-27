@@ -1,7 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 
 import { ITask } from '../@interfaces/ITask';
-import { dummyTasks } from '../dummy-tasks';
+import { seedTasks } from '../seed-data';
 
 /**
  * @class TasksService
@@ -19,8 +19,18 @@ export class TasksService {
   private _tasks = signal<ITask[]>([]);
 
   constructor() {
-    // Initialize the tasks with dummy data
-    this._tasks.set(dummyTasks.slice());
+    const rawTasks = localStorage.getItem('tasks');
+
+    this._tasks.set(rawTasks ? JSON.parse(rawTasks) : seedTasks.slice());
+  }
+
+  /**
+   * @private
+   * @method _saveTasks
+   * @description This method saves the current state of tasks to local storage.
+   */
+  private _saveTasks() {
+    localStorage.setItem('tasks', JSON.stringify(this._tasks()));
   }
 
   /**
@@ -44,6 +54,7 @@ export class TasksService {
    */
   completeTask(task: ITask) {
     this._tasks.set(this._tasks().filter(t => t.id !== task.id));
+    this._saveTasks();
   }
 
   /**
@@ -63,5 +74,7 @@ export class TasksService {
         userId,
       },
     ]);
+
+    this._saveTasks();
   }
 }
